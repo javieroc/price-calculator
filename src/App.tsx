@@ -3,15 +3,18 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import { Layout } from './components';
 import { PriceCalculator } from './features';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<PriceCalculator />} />
-      </Routes>
-    </BrowserRouter>
+    <Layout>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/*" element={<PriceCalculator />} />
+        </Routes>
+      </BrowserRouter>
+    </Layout>
   );
 }
 
