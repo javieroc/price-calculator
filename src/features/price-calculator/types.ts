@@ -13,3 +13,17 @@ export interface IceCreamPayload {
   flavor: Flavor;
   milk: number;
 }
+
+export type Toppings = 'Pepperoni' | 'Extra Cheese' | 'Sausage & Peppers' | 'Spinach Alfredo' | 'Buffalo Chicken';
+
+export type Cheese = 'Vegan' | 'Mozzarella' | '3 Cheese';
+
+export type Crust = 'Cauliflower' | 'Neapolitan' | 'New York' | 'Chicago';
+
+export interface FrozenPizzaPayload {
+  diameter: number;
+  quantity: number;
+  toppings: Toppings[];
+  cheese: Cheese;
+  crust: Crust;
+}

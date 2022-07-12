@@ -20,7 +20,7 @@ import { Utils } from '../utils';
 const schema: Yup.SchemaOf<IceCreamPayload> = Yup.object().shape({
   volume: Yup.number().min(0).required('Required'),
   flavor: Yup.mixed<Flavor>()
-    .oneOf(['Chocolate', 'Vanilla', 'Strawberry', 'Neapolitan'])
+    .oneOf(CONSTANTS.FLAVORS)
     .required('Required'),
   milk: Yup.number().min(0).required('Required'),
 });
