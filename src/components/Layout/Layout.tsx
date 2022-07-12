@@ -1,13 +1,22 @@
 import {
-  Box, Button, Flex, Heading, useColorModeValue,
+  Box,
+  IconButton,
+  Flex,
+  Heading,
+  useColorModeValue,
+  useColorMode,
 } from '@chakra-ui/react';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 interface Props {
   children: ReactNode;
 }
 
 function Layout({ children }: Props): JSX.Element {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Box minH="100vh" bg={useColorModeValue('white', 'gray.900')}>
       <Flex
@@ -17,12 +26,18 @@ function Layout({ children }: Props): JSX.Element {
         borderBottomColor={useColorModeValue('yellow.300', 'gray.700')}
         padding={2}
       >
-        <Heading
-          fontSize="3xl"
-        >
-          Logo
-        </Heading>
-        <Button>Toggle</Button>
+        <Link to="/">
+          <Heading
+            fontSize="3xl"
+          >
+            Price Calculator
+          </Heading>
+        </Link>
+        <IconButton
+          onClick={toggleColorMode}
+          aria-label="Color toggle"
+          icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+        />
       </Flex>
       <Box>{children}</Box>
     </Box>

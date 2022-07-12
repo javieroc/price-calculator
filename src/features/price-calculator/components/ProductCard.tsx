@@ -1,4 +1,6 @@
-import { Heading, Image, VStack } from '@chakra-ui/react';
+import {
+  Heading, Image, useColorModeValue, VStack,
+} from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { Product } from '../types';
 
@@ -13,7 +15,7 @@ function ProductCard({ product }: Props): JSX.Element {
       <VStack
         justify="center"
         padding={2}
-        borderColor="gray.900"
+        borderColor={useColorModeValue('gray.900', 'gray.300')}
         borderWidth={4}
         borderRadius={4}
         width="200px"

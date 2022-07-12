@@ -1,23 +1,9 @@
 import { Flex, Heading, VStack } from '@chakra-ui/react';
-import { Product } from '../types';
-import IceCreamImage from '../../../assets/ice-cream.png';
-import PizzaImage from '../../../assets/pizza.png';
 import { ProductCard } from './ProductCard';
-
-const products: Product[] = [
-  {
-    icon: IceCreamImage,
-    name: 'Ice Cream',
-    sku: 'ice-cream',
-  },
-  {
-    icon: PizzaImage,
-    name: 'Frozen Pizza',
-    sku: 'frozen-pizza',
-  },
-];
+import { useProducts } from '../hooks';
 
 function SelectProduct(): JSX.Element {
+  const { products } = useProducts();
   return (
     <VStack marginTop={8}>
       <Heading fontSize="3xl">Select SKU</Heading>

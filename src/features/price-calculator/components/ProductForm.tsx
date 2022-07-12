@@ -1,11 +1,33 @@
-import { Heading } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useCalculate } from '../hooks';
+import { SKU } from '../types';
+import { IceCreamForm } from './IceCreamForm';
 
 function ProductForm(): JSX.Element {
-  const { sku } = useParams<{ sku: string }>();
+  const { sku } = useParams<{ sku: SKU }>();
+  const [result, setResult] = useState('');
+
+  const calculate = useCalculate(sku ?? 'ice-cream');
 
   return (
-    <Heading>{sku}</Heading>
+    <Flex
+      direction="column"
+      justify="center"
+      align="center"
+      marginTop={8}
+    >
+      <IceCreamForm onSubmit={(values) => {
+        setResult(calculate(values).toFixed(2));
+      }}
+      />
+      <Heading fontSize="3xl">
+        Result
+        {' '}
+        {result}
+      </Heading>
+    </Flex>
   );
 }
 
