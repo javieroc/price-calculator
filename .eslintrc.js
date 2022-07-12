@@ -19,7 +19,7 @@ module.exports = {
         tsconfigRootDir: __dirname,
         project: './tsconfig.json'
     },
-    ignorePatterns: ['.eslintrc.js', 'vite.config.ts'],
+    ignorePatterns: ['.eslintrc.js', 'vite.config.ts', 'cypress.config.ts'],
     plugins: [
         'react',
         'react-hooks',
