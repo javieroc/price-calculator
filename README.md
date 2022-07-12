@@ -22,3 +22,9 @@ npm install
 npm run build
 npm run preview
 ```
+
+## Run cypress e2e tests
+
+```
+npm run cy:run
+```
