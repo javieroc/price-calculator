@@ -2,6 +2,8 @@
 
 This project is using [ViteJS](https://vitejs.dev/) as a tool for the development.
 
+Check [demo](https://unrivaled-kringle-ca2420.netlify.app/) running on Netlify.
+
 ## Setup
 
 ```
